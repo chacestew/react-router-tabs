@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.react-router-tabs .nav-tab {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px 25px;
+    color: #bbb;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+}
+
+.react-router-tabs .nav-tab:hover {
+    background-color: oldlace;
+}
+
+.react-router-tabs .nav-tab.active {
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid orange;
+    border-bottom: 1px solid #fff;
+    cursor: default;
+}

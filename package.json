@@ -1,0 +1,58 @@
+{
+  "name": "react-router-tabs",
+  "version": "1.0.0",
+  "description": "Dead simple navigation tabs for React Router 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "babel src -d lib",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chacestew/react-router-tabs.git"
+  },
+  "keywords": [
+    "router-tabs",
+    "routed-tabs",
+    "nav-tab",
+    "react-tabs",
+    "tab-component",
+    "tab",
+    "tabs",
+    "tabbed",
+    "navigation",
+    "component",
+    "react",
+    "router"
+  ],
+  "author": "Chace Stewart <chacestew@gmail.com> (https://github.com/chacestew)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chacestew/react-router-tabs/issues"
+  },
+  "homepage": "https://github.com/chacestew/react-router-tabs#readme",
+  "peerDependencies": {
+    "react": "^15"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-router-config": "^1.0.0-beta.4",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react-router-dom": "^4.2.2"
+  }
+}

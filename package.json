@@ -2,7 +2,7 @@
   "name": "react-router-tabs",
   "version": "1.0.0",
   "description": "Dead simple navigation tabs for React Router 4",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "babel src -d lib",

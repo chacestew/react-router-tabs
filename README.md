@@ -1,6 +1,11 @@
 # React Router Tabs
+[![npm](https://img.shields.io/npm/v/react-router-tabs.svg)](https://www.npmjs.com/package/react-router-tabs)
+[![npm](https://img.shields.io/npm/dm/react-router-tabs.svg)](https://www.npmjs.com/package/react-router-tabs)
+[![GitHub stars](https://img.shields.io/github/stars/chacestew/react-router-tabs.svg?style=social&label=Stars)](https://github.com/chacestew/react-router-tabs)
 
 Simple navigation tabs for React Router 4.
+
+![preview-gif](https://user-images.githubusercontent.com/21122529/32943041-911cf582-cb93-11e7-831e-6765a299326d.gif)
 
 ## Why?
 

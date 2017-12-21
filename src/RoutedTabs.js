@@ -13,6 +13,8 @@ const RoutedTabs = ({
   ...extraProps
 }) => {
   const enhancedChildren = React.Children.map(children, tab => {
+    if (!tab) return;
+    
     const { props } = tab;
 
     const to =

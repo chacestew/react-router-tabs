@@ -1,43 +1,40 @@
 {
-  "_from": "react-router-tabs",
-  "_id": "react-router-tabs@1.0.2",
-  "_inBundle": false,
-  "_integrity": "sha512-HKdrGWyEPCzdlqY6LesHV76Cyo3rRN+4pobfdpZtQBMGhSVmHnbvlj46jVIXp2qbK2l4iaThAFy9VOJqOAmuvg==",
-  "_location": "/react-router-tabs",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "react-router-tabs",
-    "name": "react-router-tabs",
-    "escapedName": "react-router-tabs",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+  "name": "react-router-tabs",
+  "version": "1.0.2",
+  "description": "Dead simple navigation tabs for React Router 4",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "babel src -d lib",
+    "prepublishOnly": "npm run build"
   },
-  "_requiredBy": [
-    "#USER",
-    "/"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chacestew/react-router-tabs.git"
+  },
+  "keywords": [
+    "router-tabs",
+    "routed-tabs",
+    "nav-tab",
+    "react-tabs",
+    "tab-component",
+    "tab",
+    "tabs",
+    "tabbed",
+    "navigation",
+    "component",
+    "react",
+    "router"
   ],
-  "_resolved": "https://registry.npmjs.org/react-router-tabs/-/react-router-tabs-1.0.2.tgz",
-  "_shasum": "445b67b95f2c620895b956e1ae2c4f7e5e403da6",
-  "_spec": "react-router-tabs",
-  "_where": "/Users/tom.bertrand/jquery-typeahead",
-  "author": {
-    "name": "Chace Stewart",
-    "email": "chacestew@gmail.com",
-    "url": "https://github.com/chacestew"
-  },
+  "author": "Chace Stewart <chacestew@gmail.com> (https://github.com/chacestew)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/chacestew/react-router-tabs/issues"
   },
-  "bundleDependencies": false,
-  "dependencies": {
-    "prop-types": "^15.6.0",
-    "react-router-dom": "^4.2.2"
+  "homepage": "https://github.com/chacestew/react-router-tabs#readme",
+  "peerDependencies": {
+    "react": ">=15"
   },
-  "deprecated": false,
-  "description": "Dead simple navigation tabs for React Router 4",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -54,35 +51,8 @@
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
   },
-  "homepage": "https://github.com/chacestew/react-router-tabs#readme",
-  "keywords": [
-    "router-tabs",
-    "routed-tabs",
-    "nav-tab",
-    "react-tabs",
-    "tab-component",
-    "tab",
-    "tabs",
-    "tabbed",
-    "navigation",
-    "component",
-    "react",
-    "router"
-  ],
-  "license": "MIT",
-  "main": "lib/index.js",
-  "name": "react-router-tabs",
-  "peerDependencies": {
-    "react": "^15"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chacestew/react-router-tabs.git"
-  },
-  "scripts": {
-    "build": "babel src -d lib",
-    "prepublishOnly": "npm run build",
-    "start": "webpack-dev-server"
-  },
-  "version": "1.0.2"
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react-router-dom": "^4.2.2"
+  }
 }

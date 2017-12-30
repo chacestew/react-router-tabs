@@ -3,3 +3,4 @@ example
 webpack.config.js
 .babelrc
 .gitignore
+lib

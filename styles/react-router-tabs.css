@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-.react-router-tabs .nav-tab {
+.nav-tab {
     font-family: 'Roboto', sans-serif;
     background-color: #fff;
     display: inline-block;
@@ -9,11 +9,11 @@
     text-decoration: none;
 }
 
-.react-router-tabs .nav-tab:hover {
+.nav-tab:hover {
     background-color: oldlace;
 }
 
-.react-router-tabs .nav-tab.active {
+.nav-tab.active {
     background-color: #fff;
     color: #555;
     border: 1px solid #ddd;

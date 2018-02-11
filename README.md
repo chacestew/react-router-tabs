@@ -30,7 +30,7 @@ or [npm](https://www.npm.com/)
 
     $ npm install --save react-router-tabs
 
-#### Strict dependencies
+#### Dependencies
 
 * react-router-dom
 * prop-types
@@ -53,7 +53,7 @@ import 'styles/react-router-tabs.css';
 const UsersPage = ({ match }) => {
   return (
     <div>
-      <RoutedTabs startPathWith={match.path}>
+      <RoutedTabs startPathWith={match.path}> // Optional helper
         <NavTab to="/admins">Admins</NavTab>
         <NavTab to="/moderators">Moderators</NavTab>
         <NavTab to="/users">Users</NavTab>
@@ -74,22 +74,6 @@ export default UsersPage;
 
 ## Components
 
-#### `<RoutedTabs />`
-
-Compound component to set props on enclosing `<NavTabs>`s.
-
-(optional but recommended)
-
-| Prop | Type | Default | Description |
-| --- |----- | ------- | ----------------- |
-| startPathWith | string | empty | String to append to the start of every tab's `path` to simplify writing out full paths. In most cases this should be given `props.match.path` |
-| className | string | 'react-router-tabs' | Custom className for the enclosing `<div>`s |
-| style | string | react-router-tabs' | Custom inline styles for the enclosing `<div>`s |
-| tabClassName | string | 'react-router-tabs__tab' | Custom className to be provided to each tab |
-| activeTabClassName | string | 'active' | Custom activeClassName to be provided to each tab |
-| tabStyle | string | empty | Custom inline style to be provided to each tab |
-| activeTabStyle | string | empty | Custom inline style to be provided to each tab |
-
 #### `<NavTab />`
 
 Forked and adapted from React Router's [`<NavLink />`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/modules/NavLink.js). More info on below props in the official React Router docs.
@@ -98,27 +82,49 @@ Forked and adapted from React Router's [`<NavLink />`](https://github.com/ReactT
 | --- |----- | ------- | ----------------- |
 | to | string | **required** | Path to the route to be rendered |
 | replace | bool | true | Replace current browser path rather than adding to the history |
-| exact | bool | false | Require exact path match (won't work for nested routes) |
+| exact | bool | false | Require exact path match for active styling |
 | strict | bool | true | Trailing slash considered for path match |
-| disabled | bool | false | Sets disabled className/style and blocks onClick() |
-| className | string | 'react-router-tabs' | Custom className for this tab |
+| disabled | bool | false | Disables navigation for this tab |
+| className | string | 'nav-tab' | Custom className for this tab |
 | activeClassName | string | 'active' | Custom activeClassName for this tab |
-| style | string | empty | Custom inline style |
-| activeStyle | string | empty | Custom inline style when active |
+| style | object | empty | Custom inline style |
+| activeStyle | object | empty | Custom inline style when active |
+
+#### `<RoutedTabs />`
+
+Helper compound component to provide props to child <NavTab> components. To use this, you must nest them directly:
+
+```js
+<RoutedTabs {...}>
+  <NavTab to="/first">First</NavTab>
+  <NavTab to="/second">Second</NavTab>
+  /* etc */
+</RoutedTabs>
+```
+
+| Prop | Type | Default | Description |
+| --- |----- | ------- | ----------------- |
+| startPathWith | string | empty | String to append to the start of every tab's `path` to simplify writing out full paths. In most cases this should be given `props.match.path` |
+| className | string | 'react-router-tabs' | Custom className for the enclosing `<div>`s |
+| style | object | empty | Custom inline styles for the enclosing `<div>`s |
+| tabClassName | string | 'nav-tab' | Custom className to be provided to each tab |
+| activeTabClassName | string | 'active' | Custom activeClassName to be provided to each tab |
+| tabStyle | object | empty | Custom inline style to be provided to each tab |
+| activeTabStyle | object | empty | Custom inline style to be provided to each tab |
 
 ## Styling
 
-Both components can take various classname and inline style props. 
+`<NavTab>` can take a `className` and `activeClassName`, and/or `style` and `activeStyle` props. If no classes are provided, it will be given defaults (see API above).
 
-`<RoutedTabs>` will provide tabClassName/activeTabClassName and tabStyle/activeTabStyle to any nested `<NavTabs>`. Please see the API above for more detail. 
+`<RoutedTabs>` can also be provided tabClassName props to propagate to its children. These will be overwritten if the NavTab has its own classNames.
 
-If no classnames or styles are provided, the default classnames will be used. A default stylesheet is provided in this repo (CSS/SASS versions) and can be imported like below:
+A default stylesheet is provided in both .css and .scss at:
 
-```js
-import 'node_modules/react-router-tabs/styles/react-router-tabs.css';
+```
+'node_modules/react-router-tabs/styles/react-router-tabs';
 ```
 
-Note: the provided styles have not been tested.
+Please not these styles have not been tested and are provided chiefly as an example to work from.
 
 ## Acknowledgements
 

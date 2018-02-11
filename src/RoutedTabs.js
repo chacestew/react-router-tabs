@@ -24,8 +24,8 @@ const RoutedTabs = ({
 
     return React.cloneElement(tab, {
       to,
-      className: props.className || tabClassName,
-      activeClassName: props.activeClassName || activeTabClassName,
+      className: props.className !== 'nav-tab' ? props.className : tabClassName,
+      activeClassName: props.activeClassName !== 'active' ? props.activeClassName : activeTabClassName,
       style: props.style || tabStyle,
       activeStyle: props.activeStyle || activeTabStyle,
       ...extraProps

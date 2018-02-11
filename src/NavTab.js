@@ -20,6 +20,7 @@ export const NavTab = ({
   style,
   isActive: getIsActive,
   ariaCurrent,
+  disabled,
   ...rest
 }) => {
   const path = typeof to === 'object' ? to.pathname : to;
@@ -36,11 +37,17 @@ export const NavTab = ({
       children={({ location, match }) => {
         const isActive = !!(getIsActive ? getIsActive(match, location) : match);
 
+        const onClick = e => {
+          if (isActive || disabled) {
+            e.preventDefault();
+          }
+        };
+
         return (
           <Link
             to={to}
             replace={replace} // We usually won't want tabbed navigation appending to browser history
-            onClick={e => (isActive ? e.preventDefault() : null)} // Prevent any action when the clicked tab is active
+            onClick={onClick} // Prevent any action when the clicked tab is active or disabled
             className={isActive ? [className, activeClassName].filter(i => i).join(' ') : className}
             style={isActive ? { ...style, ...activeStyle } : style}
             aria-current={isActive && ariaCurrent}
@@ -61,13 +68,15 @@ NavTab.propTypes = {
   className: PropTypes.string,
   activeStyle: PropTypes.object,
   style: PropTypes.object,
-  ariaCurrent: PropTypes.oneOf(['page', 'step', 'location', 'true'])
+  ariaCurrent: PropTypes.oneOf(['page', 'step', 'location', 'true']),
+  disabled: PropTypes.bool,
 };
 
 NavTab.defaultProps = {
   ariaCurrent: 'true',
-  replace: true,
-  exact: true
+  className: 'nav-tab',
+  activeClassName: 'active',
+  replace: true
 };
 
 export default NavTab;

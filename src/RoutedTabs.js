@@ -44,7 +44,7 @@ RoutedTabs.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   tabClassName: PropTypes.string,
-  tabActiveClassName: PropTypes.string,
+  activeTabClassName: PropTypes.string,
   tabStyle: PropTypes.object,
   activeTabStyle: PropTypes.object,
   children: PropTypes.node

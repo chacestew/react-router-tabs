@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 /*
     NavTab is just React-Router's <NavLink> with some default props changed + an onClick handler to block clicks on the active tab.
@@ -44,7 +44,7 @@ export const NavTab = ({
         };
 
         return (
-          <Link
+          <NavLink
             to={to}
             replace={replace} // We usually won't want tabbed navigation appending to browser history
             onClick={onClick} // Prevent any action when the clicked tab is active or disabled

@@ -60,7 +60,10 @@ export const NavTab = ({
 };
 
 NavTab.propTypes = {
-  to: PropTypes.string.isRequired,
+  to: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]).isRequired,
   replace: PropTypes.bool,
   exact: PropTypes.bool,
   strict: PropTypes.bool,

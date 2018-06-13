@@ -14,7 +14,7 @@ const RoutedTabs = ({
 }) => {
   const enhancedChildren = React.Children.map(children, tab => {
     if (!tab) return;
-    
+
     const { props } = tab;
 
     const to =
@@ -25,9 +25,9 @@ const RoutedTabs = ({
     return React.cloneElement(tab, {
       to,
       className: props.className !== 'nav-tab' ? props.className : tabClassName,
-      activeClassName: props.activeClassName !== 'active' ? props.activeClassName : activeTabClassName,
+      activeclassname: props.activeClassName !== 'active' ? props.activeClassName : activeTabClassName,
       style: props.style || tabStyle,
-      activeStyle: props.activeStyle || activeTabStyle,
+      activestyle: props.activeStyle || activeTabStyle,
       ...extraProps
     });
   });

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const RoutedTabs = ({
   startPathWith,
+  elementType,
   className,
   style,
   tabClassName,
@@ -14,7 +15,11 @@ const RoutedTabs = ({
 }) => {
   const enhancedChildren = React.Children.map(children, tab => {
     if (!tab) return;
-    
+
+    if (typeof tab.type === 'string') {
+      return tab;
+    }
+
     const { props } = tab;
 
     const to =
@@ -32,10 +37,12 @@ const RoutedTabs = ({
     });
   });
 
+  const El = elementType;
+
   return (
-    <div className={className} style={style}>
+    <El className={className} style={style}>
       {enhancedChildren}
-    </div>
+    </El>
   );
 };
 
@@ -52,6 +59,7 @@ RoutedTabs.propTypes = {
 
 RoutedTabs.defaultProps = {
   startPathWith: '',
+  elementType: 'div',
   className: 'react-router-tabs',
   tabClassName: 'nav-tab',
   activeTabClassName: 'active',

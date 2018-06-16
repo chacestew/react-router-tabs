@@ -19,14 +19,15 @@ export const NavTab = ({
   activeStyle,
   style,
   isActive: getIsActive,
-  ariaCurrent,
+  'aria-current': ariaCurrent,
   disabled,
+  allowClickOnActive,
   ...rest
 }) => {
   const path = typeof to === 'object' ? to.pathname : to;
 
   // Regex taken from: https://github.com/pillarjs/path-to-regexp/blob/master/index.js#L202
-  const escapedPath = path.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1');
+  const escapedPath = path && path.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1');
 
   return (
     <Route
@@ -38,7 +39,7 @@ export const NavTab = ({
         const isActive = !!(getIsActive ? getIsActive(match, location) : match);
 
         const onClick = e => {
-          if (isActive || disabled) {
+          if (disabled || (isActive && !allowClickOnActive)) {
             e.preventDefault();
           }
         };
@@ -50,7 +51,7 @@ export const NavTab = ({
             onClick={onClick} // Prevent any action when the clicked tab is active or disabled
             className={isActive ? [className, activeClassName].filter(i => i).join(' ') : className}
             style={isActive ? { ...style, ...activeStyle } : style}
-            aria-current={isActive && ariaCurrent}
+            aria-current={isActive && ariaCurrent || null}
             {...rest}
           />
         );
@@ -71,12 +72,12 @@ NavTab.propTypes = {
   className: PropTypes.string,
   activeStyle: PropTypes.object,
   style: PropTypes.object,
-  ariaCurrent: PropTypes.oneOf(['page', 'step', 'location', 'true']),
+  'aria-current': PropTypes.oneOf(['page', 'step', 'location', 'date', 'time', 'true']),
   disabled: PropTypes.bool,
 };
 
 NavTab.defaultProps = {
-  ariaCurrent: 'true',
+  'aria-current': 'page',
   className: 'nav-tab',
   activeClassName: 'active',
   replace: true

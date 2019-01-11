@@ -9,7 +9,7 @@ Simple navigation tabs for React Router 4.
 
 ## Why?
 
-There are many plain React solutions for tabs that conditionally render content based on some local state. In a [React Router](https://github.com/ReactTraining/react-router) app it would be preferable to keep rendering logic consistent by only using `<Route />` components. This library exports a simple component called **`<NabTab />`** which wraps React Router's [Link](https://reacttraining.com/react-router/web/api/Link) and makes it behave more like a tab.
+There are many plain React solutions for tabs that conditionally render content based on some local state. In a [React Router](https://github.com/ReactTraining/react-router) app it would be preferable to keep rendering logic consistent by only using `<Route />` components. This library exports a simple component called **`<NavTab />`** which wraps React Router's [Link](https://reacttraining.com/react-router/web/api/Link) and makes it behave more like a tab.
 
 ### Benefits of this library
 

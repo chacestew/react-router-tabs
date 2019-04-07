@@ -1,4 +1,12 @@
 {
-    "presets": ["env", "stage-2", "react"],
-    "comments": false
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "comments": false
 }

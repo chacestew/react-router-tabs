@@ -1,7 +1,5 @@
 src
 example
-cjs
-esm
 rollup.config.js
 webpack.config.js
 .babelrc

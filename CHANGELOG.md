@@ -1,5 +1,12 @@
 ## Changelog
 
+### [1.3.0] - 2019-04-07
+
+- Fixed incompatbility with React Router 5 ([#19](https://github.com/chacestew/react-router-tabs/issues/19))
+- Added Rollup with CommonJS and ESM builds (previous build was CommonJS via babel-cli)
+- Added production build (uglifies and removes proptypes)
+- Upgraded to Babel 7
+
 ### [1.2.0] - 2018-06-16
 - Added `allowClickOnActive` to `NavTab` to support re-selecting active tabs.
 - Added check to `RoutedTabs` to prevent passing down props to DOM elements.

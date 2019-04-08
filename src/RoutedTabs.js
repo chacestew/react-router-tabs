@@ -46,16 +46,18 @@ const RoutedTabs = ({
   );
 };
 
-RoutedTabs.propTypes = {
-  startPathWith: PropTypes.string,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  tabClassName: PropTypes.string,
-  activeTabClassName: PropTypes.string,
-  tabStyle: PropTypes.object,
-  activeTabStyle: PropTypes.object,
-  children: PropTypes.node
-};
+  if (process.env.NODE_ENV !== 'production') {
+  RoutedTabs.propTypes = {
+    startPathWith: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    tabClassName: PropTypes.string,
+    activeTabClassName: PropTypes.string,
+    tabStyle: PropTypes.object,
+    activeTabStyle: PropTypes.object,
+      children: PropTypes.node
+  };
+}
 
 RoutedTabs.defaultProps = {
   startPathWith: '',

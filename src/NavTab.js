@@ -60,21 +60,23 @@ export const NavTab = ({
   );
 };
 
-NavTab.propTypes = {
-  to: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]).isRequired,
-  replace: PropTypes.bool,
-  exact: PropTypes.bool,
-  strict: PropTypes.bool,
-  activeClassName: PropTypes.string,
-  className: PropTypes.string,
-  activeStyle: PropTypes.object,
-  style: PropTypes.object,
-  'aria-current': PropTypes.oneOf(['page', 'step', 'location', 'date', 'time', 'true']),
-  disabled: PropTypes.bool,
-};
+if (process.env.NODE_ENV !== 'production') {
+  NavTab.propTypes = {
+    to: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]).isRequired,
+    replace: PropTypes.bool,
+    exact: PropTypes.bool,
+    strict: PropTypes.bool,
+    activeClassName: PropTypes.string,
+    className: PropTypes.string,
+    activeStyle: PropTypes.object,
+    style: PropTypes.object,
+    'aria-current': PropTypes.oneOf(['page', 'step', 'location', 'date', 'time', 'true']),
+    disabled: PropTypes.bool,
+  };
+}
 
 NavTab.defaultProps = {
   'aria-current': 'page',

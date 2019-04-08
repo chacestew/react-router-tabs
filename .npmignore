@@ -1,6 +1,6 @@
 src
 example
+rollup.config.js
 webpack.config.js
 .babelrc
 .gitignore
-lib
